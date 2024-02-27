@@ -11,6 +11,7 @@
         (bridge r l)
 
         (has-torch a)
+
         (located a l)
         (located b l)
         (located c l)

@@ -50,7 +50,9 @@
             (not (located ?g2 ?i1))
             (located ?g1 ?i2)
             (located ?g2 ?i2)
-            (increase (total-cost) (crossing-cost ?g1))
+            (increase
+                (total-cost)
+                (crossing-cost ?g1))
         )
     )
 
