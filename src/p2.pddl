@@ -8,6 +8,7 @@
 
     (:init
         (bridge l r)
+        (bridge r l)
 
         (has-torch a)
         (has-torch b)

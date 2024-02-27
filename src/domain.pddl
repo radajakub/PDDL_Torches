@@ -25,7 +25,7 @@
         :precondition (and
             (located ?g1 ?i1)
             (located ?g2 ?i1)
-            (or (bridge ?i1 ?i2) (bridge ?i2 ?i1))
+            (bridge ?i1 ?i2)
             (has-torch ?g1)
         )
 
@@ -34,9 +34,10 @@
             (not (located ?g2 ?i1))
             (located ?g1 ?i2)
             (located ?g2 ?i2)
-            (increase (total-cost) 1)
+            (increase (total-cost) (crossing-cost ?g1))
         )
     )
+
     (:action pass-torch
         :parameters (?g1 ?g2 - guy ?i - island)
         :precondition (and

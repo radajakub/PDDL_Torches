@@ -8,8 +8,11 @@
 
     (:init
         (bridge i1 i2)
+        (bridge i2 i1)
         (bridge i2 i3)
+        (bridge i3 i2)
         (bridge i2 i4)
+        (bridge i4 i2)
 
         (has-torch a)
         (has-torch f)
