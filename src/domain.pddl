@@ -13,7 +13,8 @@
     )
 
     (:functions
-        (crossing-cost ?g) - number
+        ; (crossing-cost ?g) - number
+        (pair-cost ?g1 ?g2) - number
         (total-cost) - number
     )
 
@@ -50,9 +51,10 @@
             (not (located ?g2 ?i1))
             (located ?g1 ?i2)
             (located ?g2 ?i2)
-            (increase
-                (total-cost)
-                (crossing-cost ?g1))
+            ; (increase
+            ;     (total-cost)
+            ;     (crossing-cost ?g1))
+            (increase (total-cost) (pair-cost ?g1 ?g2))
         )
     )
 
