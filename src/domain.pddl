@@ -18,6 +18,22 @@
     )
 
     ; TODO: maybe add another action for crossing as a single guy
+    ; Add distinct condition to normal cross
+    ; (:action single-cross
+    ;     :parameters (?g - guy ?i1 ?i2 - island)
+
+    ;     :precondition (and
+    ;         (located ?g ?i1)
+    ;         (bridge ?i1 ?i2)
+    ;         (has-torch ?g)
+    ;     )
+
+    ;     :effect (and
+    ;         (not (located ?g ?i1))
+    ;         (located ?g ?i2)
+    ;         (increase (total-cost) (crossing-cost ?g))
+    ;     )
+    ; )
 
     (:action cross
         :parameters (?g1 ?g2 - guy ?i1 ?i2 - island)
