@@ -56,12 +56,14 @@
 
     (:action pass-torch
         :parameters (?g1 ?g2 - guy ?i - island)
+
         :precondition (and
             (located ?g1 ?i)
             (located ?g2 ?i)
             (has-torch ?g1)
             (not (has-torch ?g2))
         )
+
         :effect (and
             (not (has-torch ?g1))
             (has-torch ?g2)
