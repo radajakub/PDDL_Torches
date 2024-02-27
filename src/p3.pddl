@@ -31,9 +31,9 @@
 
     (:goal
         (and
-            (located a i4)
-            (located b i4)
-            (located c i4)
+            (located a i3)
+            (located b i3)
+            (located c i3)
             (located d i4)
             (located e i4)
             (located f i4)
