@@ -18,8 +18,23 @@
         (total-cost) - number
     )
 
-    ; Add distinct condition to normal cross
-    (:action single-cross
+    (:action pass-torch
+        :parameters (?g1 ?g2 - guy ?i - island)
+
+        :precondition (and
+            (located ?g1 ?i)
+            (located ?g2 ?i)
+            (has-torch ?g1)
+            (not (has-torch ?g2))
+        )
+
+        :effect (and
+            (not (has-torch ?g1))
+            (has-torch ?g2)
+        )
+    )
+
+    (:action cross
         :parameters (?g - guy ?i1 ?i2 - island)
 
         :precondition (and
@@ -52,22 +67,6 @@
             (located ?g1 ?i2)
             (located ?g2 ?i2)
             (increase (total-cost) (pair-cost ?g1 ?g2))
-        )
-    )
-
-    (:action pass-torch
-        :parameters (?g1 ?g2 - guy ?i - island)
-
-        :precondition (and
-            (located ?g1 ?i)
-            (located ?g2 ?i)
-            (has-torch ?g1)
-            (not (has-torch ?g2))
-        )
-
-        :effect (and
-            (not (has-torch ?g1))
-            (has-torch ?g2)
         )
     )
 )

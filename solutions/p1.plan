@@ -1,0 +1,8 @@
+(cross a b l r)
+(cross a r l)
+(pass-torch a c l)
+(cross c d l r)
+(pass-torch c b r)
+(cross b r l)
+(cross b a l r)
+; cost = 15 (general cost)
