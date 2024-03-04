@@ -32,15 +32,19 @@
         (cheaper a d)
         (cheaper a e)
         (cheaper a f)
+
         (cheaper b c)
         (cheaper b d)
         (cheaper b e)
         (cheaper b f)
+
         (cheaper c d)
         (cheaper c e)
         (cheaper c f)
+
         (cheaper d e)
         (cheaper d f)
+
         (cheaper e f)
     )
 

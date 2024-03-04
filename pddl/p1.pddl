@@ -25,8 +25,10 @@
         (cheaper a b)
         (cheaper a c)
         (cheaper a d)
+
         (cheaper b c)
         (cheaper b d)
+
         (cheaper c d)
     )
 
