@@ -31,25 +31,25 @@
         (= (crossing-cost e) 5)
         (= (crossing-cost f) 6)
 
-        (cheaper a b)
-        (cheaper a c)
-        (cheaper a d)
-        (cheaper a e)
-        (cheaper a f)
+        (faster a b)
+        (faster a c)
+        (faster a d)
+        (faster a e)
+        (faster a f)
 
-        (cheaper b c)
-        (cheaper b d)
-        (cheaper b e)
-        (cheaper b f)
+        (faster b c)
+        (faster b d)
+        (faster b e)
+        (faster b f)
 
-        (cheaper c d)
-        (cheaper c e)
-        (cheaper c f)
+        (faster c d)
+        (faster c e)
+        (faster c f)
 
-        (cheaper d e)
-        (cheaper d f)
+        (faster d e)
+        (faster d f)
 
-        (cheaper e f)
+        (faster e f)
     )
 
     (:goal

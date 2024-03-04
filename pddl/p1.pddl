@@ -22,14 +22,14 @@
         (= (crossing-cost c) 5)
         (= (crossing-cost d) 8)
 
-        (cheaper a b)
-        (cheaper a c)
-        (cheaper a d)
+        (faster a b)
+        (faster a c)
+        (faster a d)
 
-        (cheaper b c)
-        (cheaper b d)
+        (faster b c)
+        (faster b d)
 
-        (cheaper c d)
+        (faster c d)
     )
 
     (:goal

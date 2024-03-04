@@ -10,7 +10,7 @@
         (has-torch ?g - guy)
         (at ?g - guy ?i - island)
         (bridge ?i1 ?i2 - island)
-        (cheaper ?g1 ?g2 - guy)
+        (faster ?g1 ?g2 - guy)
     )
 
     (:functions
@@ -59,7 +59,7 @@
             (at ?g2 ?i1)
             (bridge ?i1 ?i2)
             (has-torch ?g1)
-            (cheaper ?g1 ?g2)
+            (faster ?g1 ?g2)
         )
 
         :effect (and
