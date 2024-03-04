@@ -8,13 +8,13 @@
 
     (:predicates
         (has-torch ?g - guy)
-        (located ?g - guy ?i - island)
+        (at ?g - guy ?i - island)
         (bridge ?i1 ?i2 - island)
+        (cheaper ?g1 ?g2 - guy)
     )
 
     (:functions
         (crossing-cost ?g) - number
-        (pair-cost ?g1 ?g2) - number
         (total-cost) - number
     )
 
@@ -22,8 +22,8 @@
         :parameters (?g1 ?g2 - guy ?i - island)
 
         :precondition (and
-            (located ?g1 ?i)
-            (located ?g2 ?i)
+            (at ?g1 ?i)
+            (at ?g2 ?i)
             (has-torch ?g1)
             (not (has-torch ?g2))
         )
@@ -38,14 +38,14 @@
         :parameters (?g - guy ?i1 ?i2 - island)
 
         :precondition (and
-            (located ?g ?i1)
+            (at ?g ?i1)
             (bridge ?i1 ?i2)
             (has-torch ?g)
         )
 
         :effect (and
-            (not (located ?g ?i1))
-            (located ?g ?i2)
+            (not (at ?g ?i1))
+            (at ?g ?i2)
             (increase (total-cost) (crossing-cost ?g))
         )
     )
@@ -55,18 +55,19 @@
 
         :precondition (and
             (not (= ?g1 ?g2))
-            (located ?g1 ?i1)
-            (located ?g2 ?i1)
+            (at ?g1 ?i1)
+            (at ?g2 ?i1)
             (bridge ?i1 ?i2)
             (has-torch ?g1)
+            (cheaper ?g1 ?g2)
         )
 
         :effect (and
-            (not (located ?g1 ?i1))
-            (not (located ?g2 ?i1))
-            (located ?g1 ?i2)
-            (located ?g2 ?i2)
-            (increase (total-cost) (pair-cost ?g1 ?g2))
+            (not (at ?g1 ?i1))
+            (not (at ?g2 ?i1))
+            (at ?g1 ?i2)
+            (at ?g2 ?i2)
+            (increase (total-cost) (crossing-cost ?g2))
         )
     )
 )
